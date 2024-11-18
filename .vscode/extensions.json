@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "pkief.material-icon-theme",
+    "shd101wyy.markdown-preview-enhanced",
+    "dsznajder.es7-react-js-snippets"
+  ]
+}

@@ -1,12 +1,29 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
+import AlertMessage from "./components/AlertMessage";
+import Card from "./components/Card";
+import { FaCheckCircle  } from "react-icons/fa";
+import { BsFillInfoCircleFill } from "react-icons/bs";
+import Pricing from "./components/Pricing";
 
 const App = () => {
+  const apiResposne = {
+    status: 200,
+    message: "Valid Inputs",
+  };
+
+  const handelClick = (msg) => {
+    alert(msg);
+  }
   return (
     <>
-      <Navbar />
-      <Header />
+      {apiResposne && apiResposne.status === 200 && (
+        <AlertMessage icon={<FaCheckCircle />} type="success" message={apiResposne.message} />
+      )}
+      {apiResposne && apiResposne.status === 400 && (
+        <AlertMessage icon={<BsFillInfoCircleFill />} type="danger" message={apiResposne.message} />
+      )}
+
+      <Pricing />
     </>
   );
 };
